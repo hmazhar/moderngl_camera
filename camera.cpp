@@ -23,8 +23,6 @@ void Camera::Reset() {
 void Camera::Update() {
 	camera_direction = glm::normalize(camera_look_at - camera_position);
 	//need to set the matrix state. this is only important because lighting doesn't work if this isn't done
-	glMatrixMode(GL_PROJECTION);
-	glLoadIdentity();
 	glViewport(viewport_x, viewport_y, window_width, window_height);
 
 	if (camera_mode == ORTHO) {
@@ -58,7 +56,6 @@ void Camera::Update() {
 	view = glm::lookAt(camera_position, camera_look_at, camera_up);
 	model = glm::mat4(1.0f);
 	MVP = projection * view * model;
-	glLoadMatrixf(glm::value_ptr(MVP));
 }
 
 //Setting Functions
