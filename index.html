@@ -1,0 +1,95 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Moderngl camera by hmazhar</title>
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script src="javascripts/respond.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <!--[if lt IE 8]>
+    <link rel="stylesheet" href="stylesheets/ie.css">
+    <![endif]-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+  </head>
+  <body>
+      <div id="header">
+        <nav>
+          <li class="fork"><a href="https://github.com/hmazhar/moderngl_camera">View On GitHub</a></li>
+          <li class="downloads"><a href="https://github.com/hmazhar/moderngl_camera/zipball/master">ZIP</a></li>
+          <li class="downloads"><a href="https://github.com/hmazhar/moderngl_camera/tarball/master">TAR</a></li>
+          <li class="title">DOWNLOADS</li>
+        </nav>
+      </div><!-- end header -->
+
+    <div class="wrapper">
+
+      <section>
+        <div id="title">
+          <h1>Moderngl camera</h1>
+          <p>A quaternion based camera for modern OpenGL</p>
+          <hr>
+          <span class="credits left">Project maintained by <a href="https://github.com/hmazhar">hmazhar</a></span>
+          <span class="credits right">Hosted on GitHub Pages &mdash; Theme by <a href="https://twitter.com/michigangraham">mattgraham</a></span>
+        </div>
+
+        <h1>
+<a name="modern-opengl-camera" class="anchor" href="#modern-opengl-camera"><span class="octicon octicon-link"></span></a>Modern OpenGL Camera</h1>
+
+<p>A quaternion based camera for modern OpenGL using <a href="http://glm.g-truc.net/">GLM</a></p>
+
+<p>Code is contained in two files, camera.h and camera.cpp</p>
+
+<h2>
+<a name="using-with-glut" class="anchor" href="#using-with-glut"><span class="octicon octicon-link"></span></a>Using with GLUT</h2>
+
+<p>In order to use this code with the GLUT library the following code can be used/adapted.</p>
+
+<pre>
+Camera camera;
+...
+void CallBackKeyboardFunc(unsigned char key, int x, int y)
+{
+    switch (key) {
+    case 'w':
+        camera.Move(FORWARD);
+        break;
+    case 'a':
+        camera.Move(LEFT);
+        break;
+    case 's':
+        camera.Move(BACK);
+        break;
+    case 'd':
+        camera.Move(RIGHT);
+        break;
+    case 'q':
+        camera.Move(DOWN);
+        break;
+    case 'e':
+        camera.Move(UP);
+        break;
+    }
+}
+
+void CallBackMouseFunc(int button, int state, int x, int y)
+{
+    camera.SetPos(button, state, x, y);
+}
+void CallBackMotionFunc(int x, int y)
+{
+    camera.Move2D(x, y);
+}
+</pre>
+      </section>
+
+    </div>
+    <!--[if !IE]><script>fixScale(document);</script><![endif]-->
+    
+  </body>
+</html>
