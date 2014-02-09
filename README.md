@@ -1,14 +1,16 @@
-moderngl_camera
+Modern OpenGL Camera
 ===============
 
-a quaternion based camera for modernGL
+A quaternion based camera for modern OpenGL using [GLM](http://glm.g-truc.net/)
 
+Code is contained in two files, camera.h and camera.cpp
 
 ##Using with GLUT
-In order to use this code with the GLUT library a few more functions are required, it is assumed that camera is a Camera object. 
+In order to use this code with the GLUT library the following code can be used/adapted.
 
 <pre>
-//Camera camera
+Camera camera;
+...
 void CallBackKeyboardFunc(unsigned char key, int x, int y)
 {
 	switch (key) {
@@ -42,3 +44,4 @@ void CallBackMotionFunc(int x, int y)
 	camera.Move2D(x, y);
 }
 </pre>
+
