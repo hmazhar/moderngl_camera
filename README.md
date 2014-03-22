@@ -5,8 +5,8 @@ A quaternion based camera for modern OpenGL using [GLM](http://glm.g-truc.net/)
 
 Code is contained in two files, camera.h and camera.cpp
 
-An example is provided in example.cpp
-Use Cmake to compile example
+An example is provided in example.cpp, use Cmake to compile.
+Example draws a glut wire cube that you can fly around using the mouse to look and the keyboard to strafe.
 
 ##Using with GLUT
 
