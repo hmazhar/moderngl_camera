@@ -7,7 +7,7 @@ find_package(GLUT)
 find_package(OpenGL)
 find_package(GLEW)
 #find_package(GLM)
-include_directories( ${FREEGLUT_INC_PATH})
+include_directories( ${FREEGLUT_INC_PATH} ${GLUT_INCLUDE_DIR})
 include_directories( ${GLEW_INCLUDE_DIRS} )
 #include_directories( ${GLM_INCLUDE_DIRS} )
 
