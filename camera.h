@@ -100,7 +100,6 @@ class Camera {
 		glm::vec3 camera_direction;
 
 		glm::vec3 camera_up;
-		glm::quat rotation_quaternion;
 		glm::vec3 mouse_position;
 
 		glm::mat4 projection;

@@ -6,7 +6,6 @@ Camera::Camera() {
 	camera_mode = FREE;
 	camera_up = glm::vec3(0, 1, 0);
 	field_of_view = 45;
-	rotation_quaternion = glm::quat(1, 0, 0, 0);
 	camera_position_delta = glm::vec3(0, 0, 0);
 	camera_scale = .5f;
 	max_pitch_rate = 5;
@@ -62,7 +61,6 @@ void Camera::Update() {
 void Camera::SetMode(CameraType cam_mode) {
 	camera_mode = cam_mode;
 	camera_up = glm::vec3(0, 1, 0);
-	rotation_quaternion = glm::quat(1, 0, 0, 0);
 }
 
 void Camera::SetPosition(glm::vec3 pos) {
